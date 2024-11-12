@@ -1,0 +1,200 @@
+/* General Styles for Layout Consistency */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Move title to the right along with the content */
+.title {
+    margin-left: 250px; /* Move title to match the rest of the content */
+}
+
+/* Styles for Threat Detection Page */
+.threat-detection {
+    margin-left: 250px; /* Adjust based on sidebar width */
+    padding: 20px;
+    background-color: #f5f5f5;
+    min-height: 100vh; /* Ensure full height */
+    transition: margin-left 0.3s ease; /* Smooth transition for margin-left */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #fcfcfc;
+    color: rgb(47, 122, 66);
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden */
+    transition: left 0.3s ease;
+    z-index: 10;
+    padding-top: 20px;
+}
+
+.sidebar.active {
+    left: 0; /* When active, move to the left */
+}
+
+.sidebar-content {
+    list-style: none;
+    padding-left: 10px;
+    margin-top: 20px;
+}
+
+.sidebar-content li {
+    padding: 15px;
+}
+
+.sidebar-content li a {
+    text-decoration: none;
+    color: #000000;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar-content li:hover {
+    background-color: #4b5563;
+}
+
+/* Sidebar Toggle Button */
+#menu-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.menu-line {
+    width: 25px;
+    height: 3px;
+    background-color: #662ece;
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Style for the menu button when sidebar is open */
+#menu-button.close .menu-line:nth-child(1) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+#menu-button.close .menu-line:nth-child(2) {
+    opacity: 0; /* Hide the middle line */
+}
+
+#menu-button.close .menu-line:nth-child(3) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+/* Content Styling */
+.threat-overview {
+    margin-left: 250px; /* Adjust based on sidebar width */
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.threat-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    text-align: center;
+}
+
+.critical-alert {
+    background-color: #ff4d4d;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.recent-threats, .threat-graph, .top-threat-sources, .filter-options, .threat-investigation {
+    margin-left: 250px; /* Adjust based on sidebar width */
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
+.threat-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.threat-table th, .threat-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.threat-table th {
+    background-color: #4b0dbd;
+    color: #fff;
+}
+
+/* Graph Placeholder */
+.graph-placeholder {
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    color: #555;
+    font-style: italic;
+}
+
+/* Filter Buttons */
+.filter-btn {
+    padding: 10px 15px;
+    background-color: #4b0dbd;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: #3728a5;
+}
+
+/* List Styles */
+ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+/* Threat Investigation Paragraph */
+.threat-investigation p {
+    color: #333;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .threat-detection {
+        margin-left: 0; /* Allow full width on small screens */
+    }
+
+    .threat-overview {
+        flex-direction: column; /* Stack cards vertically */
+    }
+
+    .threat-card {
+        margin-bottom: 10px; /* Adjust spacing between cards */
+    }
+
+    .filter-btn {
+        width: 100%; /* Stack filter buttons on small screens */
+        margin-bottom: 10px;
+    }
+}

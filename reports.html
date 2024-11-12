@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <link rel="stylesheet" href="reports.css"> <!-- Link to your global styles -->
+</head>
+<body>
+    <div class="container-xxl">
+        <!-- Sidebar Toggle Button -->
+        <div id="menu-button" class="menu-toggle" onclick="toggleSidebar()">
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+        </div>
+    
+
+        <!-- Sidebar -->
+        <div id="sidebar" class="sidebar">
+            <ul class="sidebar-content">
+                <li><a href="dashboard.html">Dashboard</a></li> <!-- Link to Dashboard -->
+                <li><a href="threat-detection.html">Threat Detection</a></li> <!-- Link to Threat Detection -->
+                <li><a href="user-logs.html">User Logs</a></li> <!-- Link to User Logs -->
+                <li><a href="reports.html">Reports</a></li> <!-- Link to Reports -->
+                <li><a href="settings.html">Settings</a></li> <!-- Link to Settings -->
+            </ul>
+        </div>
+
+        <!-- Main Content for Reports Page -->
+        <div class="main-content">
+            <h1>Reports</h1>
+
+            <!-- Report Summary -->
+            <section class="report-summary">
+                <h3>Report Summary</h3>
+                <p>Overview of the latest reports, including a summary of detected threats, system performance, etc.</p>
+            </section>
+
+            <!-- Detailed Reports Table -->
+            <section class="detailed-reports">
+                <h3>Detailed Reports</h3>
+                <table class="report-table">
+                    <thead>
+                        <tr>
+                            <th>Report Type</th>
+                            <th>Generated On</th>
+                            <th>Download</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Threat Detection Report</td>
+                            <td>2024-11-07</td>
+                            <td><a href="#">Download PDF</a></td>
+                        </tr>
+                        <tr>
+                            <td>User Activity Report</td>
+                            <td>2024-11-05</td>
+                            <td><a href="#">Download PDF</a></td>
+                        </tr>
+                        <!-- Additional report rows here -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Generate Custom Reports -->
+            <section class="generate-report">
+                <h3>Generate Custom Report</h3>
+                <form>
+                    <label for="report-type">Report Type:</label>
+                    <select id="report-type" name="report-type">
+                        <option value="threat">Threat Detection</option>
+                        <option value="user">User Activity</option>
+                        <!-- More report types here -->
+                    </select>
+                    <br>
+                    <label for="report-date-range">Date Range:</label>
+                    <input type="date" id="report-date-start" name="start-date">
+                    <input type="date" id="report-date-end" name="end-date">
+                    <br>
+                    <button type="submit">Generate Report</button>
+                </form>
+            </section>
+
+            <!-- Report History -->
+            <section class="report-history">
+                <h3>Report History</h3>
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Report Name</th>
+                            <th>Date</th>
+                            <th>Download</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Threat Detection Overview</td>
+                            <td>2024-11-01</td>
+                            <td><a href="#">Download</a></td>
+                        </tr>
+                        <!-- Additional history rows here -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+
+    <!-- JavaScript for Sidebar Toggle -->
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            const menuButton = document.getElementById("menu-button");
+            const mainContent = document.querySelector(".main-content");
+            
+            sidebar.classList.toggle("active");
+            mainContent.classList.toggle("shifted");
+            menuButton.classList.toggle("close");
+        }
+    </script>
+</body>
+</html>

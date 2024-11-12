@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+    <!-- Sidebar Toggle Button -->
+    <div id="menu-button" class="menu-toggle" onclick="toggleSidebar()">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <ul class="sidebar-content">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="threat-detection.html">Threat Detection</a></li>
+            <li><a href="user-logs.html">User Logs</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="settings.html">Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content for Settings Page -->
+    <div class="main-content">
+        <h1>Settings</h1>
+
+        <!-- Account Settings Section -->
+        <section class="account-settings">
+            <h2>Account Settings</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email">
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="New Password">
+
+                <button type="submit">Save Changes</button>
+            </form>
+        </section>
+
+        <!-- Notification Settings Section -->
+        <section class="notification-settings">
+            <h2>Notification Settings</h2>
+            <form>
+                <label>
+                    <input type="checkbox" name="email-notifications"> Email Notifications
+                </label>
+                <label>
+                    <input type="checkbox" name="sms-notifications"> SMS Notifications
+                </label>
+                <label>
+                    <input type="checkbox" name="push-notifications"> Push Notifications
+                </label>
+
+                <button type="submit">Save Preferences</button>
+            </form>
+        </section>
+
+        <!-- Privacy Settings Section -->
+        <section class="privacy-settings">
+            <h2>Privacy Settings</h2>
+            <form>
+                <label>
+                    <input type="checkbox" name="activity-tracking"> Enable Activity Tracking
+                </label>
+                <label>
+                    <input type="checkbox" name="data-sharing"> Share Data with Partner Apps
+                </label>
+
+                <button type="submit">Update Privacy Settings</button>
+            </form>
+        </section>
+
+        <!-- Theme and Display Preferences Section -->
+        <section class="display-preferences">
+            <h2>Display Preferences</h2>
+            <form>
+                <label for="theme">Theme:</label>
+                <select id="theme" name="theme">
+                    <option value="light">Light Mode</option>
+                    <option value="dark">Dark Mode</option>
+                </select>
+
+                <label for="font-size">Font Size:</label>
+                <input type="number" id="font-size" name="font-size" placeholder="Font Size (px)">
+
+                <button type="submit">Apply Display Settings</button>
+            </form>
+        </section>
+
+        <!-- System Configuration Section -->
+        <section class="system-configuration">
+            <h2>System Configuration</h2>
+            <form>
+                <label for="whitelisted-ips">Whitelisted IPs:</label>
+                <textarea id="whitelisted-ips" name="whitelisted-ips" rows="3" placeholder="Add IP addresses..."></textarea>
+
+                <label for="timeout">System Timeout (minutes):</label>
+                <input type="number" id="timeout" name="timeout" placeholder="Timeout in minutes">
+
+                <button type="submit">Save System Configuration</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- JavaScript for Sidebar Toggle -->
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            const menuButton = document.getElementById("menu-button");
+            const mainContent = document.querySelector(".main-content");
+            
+            sidebar.classList.toggle("active");
+            mainContent.classList.toggle("shifted");
+            menuButton.classList.toggle("close");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-xxl">
+        <!-- Sidebar Toggle Button (outside of Sidebar) -->
+        <div id="menu-button" class="menu-toggle" onclick="toggleSidebar()">
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+        </div>
+    
+        <!-- Sidebar -->
+        <div id="sidebar" class="sidebar">
+            <ul class="sidebar-content">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="threat-detection.html">Threat Detection</a></li>
+                <li><a href="user-logs.html">User Logs</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </div>
+    
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <h1>Dashboard</h1>
+                <div class="header-icons">
+                    <i class="fas fa-bell"></i>
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </header>
+            <div class="content-section">
+                <h1>Threat Detection Platform</h1>
+                <p>Welcome to your dashboard.</p>
+                <!-- Dashboard Grid -->
+                <section class="dashboard-grid">
+                    <!-- Threat Summary -->
+                    <div class="card" id="threat-summary">
+                        <h3>Threat Summary</h3>
+                        <p>Overview of detected threats in the system.</p>
+                        <div class="threat-stats">
+                            <div><span>45</span> Total Threats</div>
+                            <div><span>12</span> Critical</div>
+                            <div><span>20</span> Medium</div>
+                            <div><span>13</span> Low</div>
+                        </div>
+                    </div>
+                    <!-- Analysis Overview -->
+                    <div class="card" id="analysis-overview">
+                        <h3>Analysis Overview</h3>
+                        <p>Insights based on system analysis.</p>
+                        <div class="analysis-details">
+                            <p><strong>Common Patterns:</strong> Unauthorized Access</p>
+                            <p><strong>Most Affected Areas:</strong> Finance, HR</p>
+                        </div>
+                    </div>
+                    <!-- User Status -->
+                    <div class="card" id="user-status">
+                        <h3>User Status</h3>
+                        <ul>
+                            <li><strong>Active Users:</strong> 120</li>
+                            <li><strong>Flagged Users:</strong> 5</li>
+                        </ul>
+                    </div>
+                    <!-- Recent Activities -->
+                    <div class="card" id="recent-activities">
+                        <h3>Recent Activities</h3>
+                        <ul>
+                            <li>File download by user JohnD <span class="time">2 mins ago</span></li>
+                            <li>New login detected from IP 192.168.1.1 <span class="time">5 mins ago</span></li>
+                        </ul>
+                    </div>
+                    <!-- Logs -->
+                    <div class="card" id="logs">
+                        <h3>Logs</h3>
+                        <p>Access and activity logs for system monitoring.</p>
+                        <button class="view-logs-btn">View Logs</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Sidebar Toggle -->
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            const menuButton = document.getElementById("menu-button");
+            
+            sidebar.classList.toggle("active");        // Show/hide sidebar
+            menuButton.classList.toggle("close");      // Toggle "X" icon
+        }
+    </script>
+</body>
+</html>

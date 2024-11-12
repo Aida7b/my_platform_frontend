@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Logs</title>
+    <link rel="stylesheet" href="user-logs.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Toggle Button -->
+        <div id="menu-button" class="menu-toggle" onclick="toggleSidebar()">
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar" class="sidebar">
+            <ul class="sidebar-content">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="threat-detection.html">Threat Detection</a></li>
+                <li><a href="user-logs.html">User Logs</a></li> <!-- Link to User Logs -->
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content for User Logs Page -->
+        <div class="main-content">
+            <h1>User Logs</h1>
+
+            <!-- Filter and Search Options -->
+            <section class="filter-options">
+                <input type="text" id="search-bar" placeholder="Search logs by username, IP...">
+                <input type="date" id="start-date" placeholder="Start Date">
+                <input type="date" id="end-date" placeholder="End Date">
+                <button class="filter-btn" onclick="applyFilters()">Apply Filters</button>
+            </section>
+
+            <!-- User Activity Log Table -->
+            <section class="activity-logs">
+                <table class="log-table">
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Username</th>
+                            <th>IP Address</th>
+                            <th>Activity Type</th>
+                            <th>Status</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024-11-07 10:00 AM</td>
+                            <td>user1</td>
+                            <td>192.168.1.100</td>
+                            <td>Login Attempt</td>
+                            <td>Success</td>
+                            <td>Logged in successfully</td>
+                        </tr>
+                        <tr>
+                            <td>2024-11-07 11:15 AM</td>
+                            <td>user2</td>
+                            <td>192.168.1.102</td>
+                            <td>File Access</td>
+                            <td>Success</td>
+                            <td>Accessed "report.pdf"</td>
+                        </tr>
+                        <!-- Additional log entries here -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- User Activity Summary -->
+            <section class="activity-summary">
+                <h3>Activity Summary</h3>
+                <ul>
+                    <li>Total Logins: 500</li>
+                    <li>Failed Login Attempts: 12</li>
+                    <li>Most Active User: user2</li>
+                    <li>Login Trends: 80% success rate in the last 24 hours</li>
+                </ul>
+            </section>
+
+            <!-- Export Logs Option -->
+            <section class="export-logs">
+                <button class="export-btn" onclick="exportLogs()">Export Logs (CSV)</button>
+            </section>
+        </div>
+    </div>
+
+    <!-- JavaScript for Sidebar Toggle and Export -->
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            const menuButton = document.getElementById("menu-button");
+            const mainContent = document.querySelector(".main-content");
+            
+            sidebar.classList.toggle("active");
+            mainContent.classList.toggle("shifted");
+            menuButton.classList.toggle("close");
+        }
+
+        // Filter function (for demonstration purposes)
+        function applyFilters() {
+            const searchQuery = document.getElementById("search-bar").value;
+            const startDate = document.getElementById("start-date").value;
+            const endDate = document.getElementById("end-date").value;
+            // Add filter logic here (e.g., use the values to filter the logs in your backend)
+            console.log(`Filtering logs with: ${searchQuery}, from: ${startDate} to ${endDate}`);
+        }
+
+        // Export logs to CSV
+        function exportLogs() {
+            let csvContent = "Timestamp,Username,IP Address,Activity Type,Status,Details\n";
+            const tableRows = document.querySelectorAll(".log-table tbody tr");
+            tableRows.forEach(row => {
+                const rowData = Array.from(row.cells).map(cell => cell.textContent);
+                csvContent += rowData.join(",") + "\n";
+            });
+
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "user_logs.csv";
+            link.click();
+        }
+    </script>
+</body>
+</html>

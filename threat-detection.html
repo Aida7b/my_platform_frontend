@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threat Detection</title>
+    <link rel="stylesheet" href="threat-detection.css"> <!-- Link to your global styles -->
+</head>
+<body>
+    <div class="container-xxl">
+        <!-- Sidebar Toggle Button -->
+        <div id="menu-button" class="menu-toggle" onclick="toggleSidebar()">
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar" class="sidebar">
+            <ul class="sidebar-content">
+                <li><a href="dashboard.html">Dashboard</a></li> <!-- Link to Dashboard -->
+                <li><a href="threat-detection.html">Threat Detection</a></li> <!-- Link to Threat Detection -->
+                <li><a href="user-logs.html">User Logs</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content for Threat Detection Page -->
+        <div class="main-content">
+            <!-- Add margin-left to title to align with other content -->
+            <h1 class="title">Threat Detection</h1>
+
+            <!-- Threat Overview Summary -->
+            <section class="threat-overview">
+                <div class="threat-card">
+                    <h3>Threat Overview Summary</h3>
+                    <p>High-level summary of recent threats and system status.</p>
+                </div>
+                <div class="threat-card">
+                    <h3>Critical Alerts</h3>
+                    <p class="critical-alert">5 Critical Alerts!</p>
+                    <p>Immediate action required for high-risk threats.</p>
+                </div>
+            </section>
+
+            <!-- Recent Threats List -->
+            <section class="recent-threats">
+                <h3>Recent Threats</h3>
+                <table class="threat-table">
+                    <thead>
+                        <tr>
+                            <th>Threat ID</th>
+                            <th>Type</th>
+                            <th>Severity</th>
+                            <th>Source</th>
+                            <th>Date Detected</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>001</td>
+                            <td>Unauthorized Access</td>
+                            <td>Critical</td>
+                            <td>IP 192.168.1.100</td>
+                            <td>2024-11-07</td>
+                        </tr>
+                        <!-- Additional threat rows here -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Threat Graph or Timeline -->
+            <section class="threat-graph">
+                <h3>Threat Timeline</h3>
+                <div class="graph-placeholder">
+                    <!-- Placeholder for graph or chart -->
+                    <p>[Graph Placeholder]</p>
+                </div>
+            </section>
+
+            <!-- Top Threat Sources or Categories -->
+            <section class="top-threat-sources">
+                <h3>Top Threat Sources/Categories</h3>
+                <p>List of sources contributing the highest number of threats.</p>
+                <ul>
+                    <li>Source: External IPs</li>
+                    <li>Category: Phishing</li>
+                    <!-- Additional sources or categories here -->
+                </ul>
+            </section>
+
+            <!-- Interactive Filter Options -->
+            <section class="filter-options">
+                <h3>Filter Threats</h3>
+                <button class="filter-btn">Filter by Date</button>
+                <button class="filter-btn">Filter by Severity</button>
+                <button class="filter-btn">Filter by Source</button>
+            </section>
+
+            <!-- Details of Threat Investigation -->
+            <section class="threat-investigation">
+                <h3>Threat Investigation Details</h3>
+                <p>In-depth details on ongoing investigations and insights.</p>
+            </section>
+        </div>
+    </div>
+
+    <!-- JavaScript for Sidebar Toggle -->
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            const menuButton = document.getElementById("menu-button");
+            const mainContent = document.querySelector(".main-content");
+            
+            sidebar.classList.toggle("active");
+            mainContent.classList.toggle("shifted");
+            menuButton.classList.toggle("close");
+        }
+    </script>
+</body>
+</html>

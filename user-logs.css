@@ -1,0 +1,126 @@
+/* User Logs Page Styles */
+.container {
+    display: flex;
+}
+
+.menu-toggle {
+    cursor: pointer;
+}
+
+.menu-line {
+    width: 30px;
+    height: 4px;
+    margin: 5px 0;
+    background-color: #000;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #4b0dbd;
+    height: 100vh;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+}
+
+.sidebar-content {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-content li {
+    padding: 15px 20px;
+}
+
+.sidebar-content li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: 100%;
+}
+
+.filter-options {
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-options input, .filter-options button {
+    margin-right: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+}
+
+.filter-options button {
+    background-color: #4b0dbd;
+    color: #fff;
+    cursor: pointer;
+}
+
+.filter-options button:hover {
+    background-color: #3728a5;
+}
+
+.activity-logs {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.log-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.log-table th, .log-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.log-table th {
+    background-color: #4b0dbd;
+    color: #fff;
+}
+
+.activity-summary {
+    background-color: #fff;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.activity-summary ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.activity-summary li {
+    margin-bottom: 10px;
+}
+
+.export-btn {
+    padding: 10px 15px;
+    background-color: #4b0dbd;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.export-btn:hover {
+    background-color: #3728a5;
+}

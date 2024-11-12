@@ -1,0 +1,145 @@
+/* General Styles for Layout Consistency */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #cec9c9;
+    color: rgb(47, 122, 66);
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden */
+    transition: left 0.3s ease;
+    z-index: 10;
+    padding-top: 20px;
+}
+
+.sidebar.active {
+    left: 0; /* When active, move to the left */
+}
+
+.sidebar-content {
+    list-style: none;
+    padding-left: 10px;
+    margin-top: 20px;
+}
+
+.sidebar-content li {
+    padding: 15px;
+}
+
+.sidebar-content li a {
+    text-decoration: none;
+    color: #000000;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar-content li:hover {
+    background-color: #4b5563;
+}
+
+/* Sidebar Toggle Button */
+#menu-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.menu-line {
+    width: 25px;
+    height: 3px;
+    background-color: #662ece;
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Style for the menu button when sidebar is open */
+#menu-button.close .menu-line:nth-child(1) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+#menu-button.close .menu-line:nth-child(2) {
+    opacity: 0; /* Hide the middle line */
+}
+
+#menu-button.close .menu-line:nth-child(3) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+/* Reports Page Styles */
+.reports {
+    background-color: #cac7c7;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Detailed Reports Table */
+.report-table, .history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.report-table th, .history-table th, .report-table td, .history-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.report-table th, .history-table th {
+    background-color: #4b0dbd;
+    color: #fff;
+}
+
+.report-table a, .history-table a {
+    text-decoration: none;
+    color: #4b0dbd;
+}
+
+/* Report Form Styles */
+.generate-report form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.generate-report form input, .generate-report form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.generate-report form button {
+    padding: 10px 20px;
+    background-color: #4b0dbd;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.generate-report form button:hover {
+    background-color: #3728a5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .reports {
+        margin-left: 0;
+    }
+}
